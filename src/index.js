@@ -9,7 +9,6 @@ const breedUrl = 'https://dog.ceo/api/breeds/list/all'
 document.addEventListener("DOMContentLoaded", function () {
     fetchImages();
     fetchBreeds();
-  
    
 });
 
