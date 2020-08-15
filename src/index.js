@@ -73,13 +73,15 @@ function fetchImages(){
       //}
 
       function colorChanged(){
-          document.getElementById("li").onclick = function(){
+          //document.getElementById("li").onclick = function(){
+            li.onclick = function(){
              document.getElementById("li").style.color = "blue";
         }
-
+    }
 
 document.addEventListener('DOMContentLoaded', function() {
     fetchImages() 
     fetchBreeds()
     changeColor()
-  })
+})
+  
