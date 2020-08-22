@@ -33,29 +33,32 @@ function showBreed(breeds) {
        li = document.createElement("li")
        li.setAttribute("id", "each-breed")
        li.innerHTML = breed
-       li.addEventListener("mouseover", changeColorText(li))
+       //li.addEventListener('click', changeColorText)
        ul.appendChild(li)
+       
+       
    }) 
+   ul.addEventListener('click', changeColorText)
 };
 
 
-//challange 3
+//challenge 3
 
 function changeColorText(text) {
   text.style.color = "red"
 };
 
-const eachBreed = document.querySelectorAll("#each-breed");
-eachBreed.forEach(breed => {
-  breed.addEventListener("click", changeColorText())
-});
+// const eachBreed = document.querySelectorAll("#each-breed");
+// eachBreed.forEach(breed => {
+//   breed.addEventListener("click", changeColorText)
+// });
 
 
 //challange 4
 
 function filterByFirstLetter(collection, letter) {
-  return collection.filter(function(b){
-    b.charAt(0) === letter
+  return collection.filter(function(elem){
+    elem.charAt(0) === letter
 })
 };
 
