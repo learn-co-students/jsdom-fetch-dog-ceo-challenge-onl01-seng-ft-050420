@@ -33,34 +33,36 @@ function showBreed(breeds) {
        li = document.createElement("li")
        li.setAttribute("id", "each-breed")
        li.innerHTML = breed
-       //li.addEventListener('click', changeColorText)
+       li.addEventListener('click', changeColorText)
        ul.appendChild(li)
-       
-       
-   }) 
-   ul.addEventListener('click', changeColorText)
+    }) 
+   //ul.addEventListener('click', changeColorText)-----this will work too
 };
 
 
 //challenge 3
 
-function changeColorText(text) {
-  text.style.color = "red"
+function changeColorText(event) {
+  event.target.style.color = "red"
 };
-
-// const eachBreed = document.querySelectorAll("#each-breed");
-// eachBreed.forEach(breed => {
-//   breed.addEventListener("click", changeColorText)
-// });
 
 
 //challange 4
 
-function filterByFirstLetter(collection, letter) {
-  return collection.filter(function(elem){
-    elem.charAt(0) === letter
+
+const selectInput = document.getElementById("breed-dropdown")
+selectInput.addEventListener("change", function (){
+   let allBreeds = document.getElementsByTagName("li");
+
+   Array.from(allBreeds).forEach(b=> {
+     const fisrtLetter = b.innerText[0];
+     if(fisrtLetter == selectInput.value){
+       b.style.display = '';
+     } else {
+       b.style.display = 'none';
+     }
+   })
 })
-};
 
 
 
