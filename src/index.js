@@ -55,8 +55,8 @@ selectInput.addEventListener("change", function (){
    let allBreeds = document.getElementsByTagName("li");
 
    Array.from(allBreeds).forEach(b=> {
-     const fisrtLetter = b.innerText[0];
-     if(fisrtLetter == selectInput.value){
+     
+     if(b.innerText[0] == selectInput.value){
        b.style.display = '';
      } else {
        b.style.display = 'none';
